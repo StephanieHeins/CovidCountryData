@@ -51,6 +51,13 @@ function renderHistory() {
   }
 }
 
+function clearHistory(event) {
+    localStorage.clear();
+    let clear = "";
+    document.getElementById ("searchHistory").innerHTML = clear;
+    console.log(localStorage);
+}
 
 // Onclick handlers
 $("#searchBtn").click(ccSearch);
+$("#clearBtn").click(clearHistory);
