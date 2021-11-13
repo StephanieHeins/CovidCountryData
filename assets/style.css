@@ -2,6 +2,10 @@ body {
     background-color: rgb(250, 240, 240);
 }
 
+.head {
+    font-weight: 600;
+}
+
 #Logo {
     color: rgb(212, 166, 166);
     font-size: 150%;
