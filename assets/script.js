@@ -11,7 +11,6 @@ var recovered = document.querySelector('#recovered');
 var historyArray = [];
 
 // Search CC function 
-
 function ccSearch(event) {
     let userInput=$("#searchInput").val().trim();
     var Query = 'https://covid-19-data.p.rapidapi.com/country/code?code=' + userInput + '&apikey=7da14da879msh47cc8472a21896cp170670jsn11ea31ce2335'
@@ -41,6 +40,7 @@ function ccSearch(event) {
     });
 }
 
+// Render Search History into list 
 function renderHistory() {
     var historyArray = JSON.parse(localStorage.getItem("searchHistory"));
     console.table(historyArray);
@@ -51,6 +51,7 @@ function renderHistory() {
   }
 }
 
+// Clear localStorage and Search History list
 function clearHistory(event) {
     localStorage.clear();
     let clear = "";
@@ -58,6 +59,19 @@ function clearHistory(event) {
     console.log(localStorage);
 }
 
+// Modal
+const modalBg = document.querySelector('.modal-background');
+const modal = document.querySelector('.modal');
+
+function countryCodes(event) {
+    modal.classList.add('is-active')
+}
+
+modalBg.addEventListener('click', () => {
+    modal.classList.remove('is-active')
+})
+
 // Onclick handlers
 $("#searchBtn").click(ccSearch);
 $("#clearBtn").click(clearHistory);
+$("#ccBtn").click(countryCodes);
