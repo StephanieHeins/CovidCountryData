@@ -8,6 +8,8 @@ var critical = document.querySelector('#critical');
 var deaths = document.querySelector('#deaths');
 var recovered = document.querySelector('#recovered');
 
+var historyArray = [];
+
 // Search CC function 
 
 function ccSearch(event) {
@@ -28,10 +30,25 @@ function ccSearch(event) {
         critical.innerHTML = data[0].critical;
         deaths.innerHTML = data[0].deaths;
         recovered.innerHTML = data[0].recovered;
+
+        historyArray.push(data[0].country);
+        window.localStorage.setItem("searchHistory", JSON.stringify(historyArray));
+        renderHistory();
+
     })
     .catch(err => {
         console.error(err);
     });
+}
+
+function renderHistory() {
+    var historyArray = JSON.parse(localStorage.getItem("searchHistory"));
+    console.table(historyArray);
+    let history = ''
+    for (let i=0; i<historyArray.length; i++) {
+        history += '<ul>' + historyArray[i] + '</ul>'
+        document.getElementById("searchHistory").innerHTML = history
+  }
 }
 
 
