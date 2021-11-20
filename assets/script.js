@@ -10,6 +10,7 @@ var recovered = document.querySelector('#recovered');
 
 var historyArray = [];
 
+// API from https://rapidapi.com/Gramzivi/api/covid-19-data/
 // Search CC function 
 function ccSearch(event) {
     let userInput=$("#searchInput").val().trim();
