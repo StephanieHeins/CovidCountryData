@@ -9,6 +9,7 @@ App to gather current data per country relating to Covid-19 statistics. Search b
 * [Technologies](#technologies)
 * [Usage](#usage)
 * [Screenshots](#screenshots)
+* [Licenses](#licenses)
 
 ## Links 
 
@@ -31,3 +32,6 @@ App to gather current data per country relating to Covid-19 statistics. Search b
 ## Screenshots
 
 ![Main Screen](assets/covidccsc.png)
+
+## Licenses 
+MIT
